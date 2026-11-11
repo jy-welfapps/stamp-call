@@ -48,12 +48,13 @@ button:disabled { opacity: .5; cursor: default; }
 .device-badge { display: inline-flex; width: 48px; height: 48px; border-radius: 50%; align-items: center; justify-content: center; font-size: 1.7rem; flex: none; }
 .offline { background: var(--ng); color: #fff; border-radius: 999px; padding: 4px 12px; font-weight: 700; }
 .grid { flex: 1; display: grid; gap: 16px; padding: 8px 0; grid-auto-rows: 1fr; min-height: 0; }
-.stamp { border: none; border-radius: 28px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 6px 0 rgba(0,0,0,.12); transition: transform .08s, filter .3s; min-height: 0; overflow: hidden; }
+.stamp { border: none; border-radius: 28px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: clamp(14px, 3.5vmin, 36px); box-shadow: 0 6px 0 rgba(0,0,0,.12); transition: transform .08s, filter .3s; min-height: 0; overflow: hidden; }
 .stamp:active { transform: translateY(4px); box-shadow: 0 2px 0 rgba(0,0,0,.12); }
 .stamp.cooling { filter: grayscale(.6) brightness(.95); }
 .stamp-emoji { font-size: clamp(3rem, 12vmin, 9rem); line-height: 1; }
 .stamp-img { width: clamp(4rem, 22vmin, 14rem); height: clamp(4rem, 22vmin, 14rem); object-fit: contain; }
 .stamp-label { font-size: clamp(1.3rem, 4.5vmin, 2.8rem); font-weight: 800; }
+.grid.cols-1 .stamp { gap: clamp(24px, 6vmin, 64px); }
 .grid.cols-1 .stamp-emoji { font-size: clamp(5rem, 32vmin, 18rem); }
 .grid.cols-1 .stamp-img { width: clamp(8rem, 45vmin, 26rem); height: clamp(8rem, 45vmin, 26rem); }
 .grid.cols-1 .stamp-label { font-size: clamp(2rem, 8vmin, 4.5rem); }
