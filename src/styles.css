@@ -65,7 +65,12 @@ button:disabled { opacity: .5; cursor: default; }
 @keyframes pop { 0% { transform: scale(.6); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
 
 /* もどる（隠し） */
-.hidden-exit { position: fixed; top: 0; right: 0; width: 64px; height: 64px; z-index: 20; }
+.hidden-exit { position: fixed; top: 0; right: 0; width: 72px; height: 72px; z-index: 20; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; opacity: .18; touch-action: none; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; border-radius: 0 0 0 24px; transition: opacity .2s, background 2s linear; }
+.hidden-exit.holding { opacity: .9; background: #ffd8a8; }
+.settings-btn { border: 2px solid var(--line); background: var(--card); border-radius: 999px; padding: 4px 12px; font-size: .9rem; font-weight: 700; }
+.room-show { font-size: 2rem; font-weight: 800; letter-spacing: .15em; margin: 0 0 8px; -webkit-user-select: text; user-select: text; }
+.modal h3 { margin: 0 0 8px; }
+.modal hr { border: none; border-top: 1px solid var(--line); margin: 12px 0; }
 .modal-back { position: fixed; inset: 0; background: rgba(0,0,0,.4); display: flex; align-items: center; justify-content: center; z-index: 30; padding: 16px; }
 .modal { background: #fff; border-radius: 16px; padding: 20px; width: min(420px, 100%); }
 .modal input { width: 100%; font-size: 1.4rem; padding: 8px 12px; border: 2px solid var(--line); border-radius: 10px; margin-bottom: 12px; }
@@ -74,10 +79,10 @@ button:disabled { opacity: .5; cursor: default; }
 /* 職員モード */
 .staff { min-height: 100%; padding: max(12px, env(safe-area-inset-top)) 16px 24px; transition: background .3s; }
 .staff.flash { background: #ffe8a3; }
-.staff-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding-right: 56px; }
+.staff-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
 .staff-head .title { font-size: 1.3rem; font-weight: 800; }
 .code { letter-spacing: .12em; font-size: 1.05rem; color: var(--ink); }
-.status { display: flex; gap: 8px; flex-wrap: wrap; }
+.status { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
 .pill { border-radius: 999px; padding: 4px 10px; font-size: .85rem; font-weight: 700; background: #eee; }
 .pill.ok { background: #d3f9d8; color: var(--ok); }
 .pill.ng { background: var(--ng); color: #fff; }

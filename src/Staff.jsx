@@ -60,13 +60,13 @@ export default function Staff({ settings, onExit }) {
 
   return (
     <div className={'staff' + (flash ? ' flash' : '') + (unseen.length ? ' has-unseen' : '')}>
-      <HiddenExit onExit={onExit} />
-      <header className="staff-head">
+            <header className="staff-head">
         <div>
           <div className="title">スタンプ（職員）</div>
           <div className="muted small">部屋コード <b className="code">{settings.room}</b></div>
         </div>
         <div className="status">
+          <HiddenExit onExit={onExit} room={settings.room} visible />
           <span className={'pill ' + (connected ? 'ok' : 'ng')}>{connected ? '● つながっています' : '× つながっていません'}</span>
           <span className={'pill ' + (wake ? 'ok' : 'warn')}>{wake ? '画面ON' : '画面が消えるかも'}</span>
         </div>
@@ -96,7 +96,7 @@ export default function Staff({ settings, onExit }) {
           </li>
         ))}
       </ul>
-      <p className="muted small foot">届いたスタンプは{config.keepHours || 24}時間で自動で消えます。右上のすみを3秒長押しで設定にもどります。</p>
+      <p className="muted small foot">届いたスタンプは{config.keepHours || 24}時間で自動で消えます。部屋コードの確認や最初の画面にもどる時は「⚙ 設定」から。</p>
     </div>
   )
 }

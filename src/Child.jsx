@@ -72,7 +72,7 @@ export default function Child({ settings, onExit }) {
 
   return (
     <div className="child" style={{ '--device': device.color }}>
-      <HiddenExit onExit={onExit} />
+      <HiddenExit onExit={onExit} room={settings.room} />
       <header className="child-head">
         <span className="device-badge" style={{ background: device.color }}>{device.icon}</span>
         {!connected && <span className="offline">つながっていません</span>}
