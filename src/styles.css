@@ -99,3 +99,5 @@ button:disabled { opacity: .5; cursor: default; }
 .done { color: var(--ok); font-weight: 700; white-space: nowrap; }
 .empty { color: var(--muted); padding: 24px; text-align: center; }
 .foot { margin-top: 24px; }
+.child-status { position: relative; }
+.version { position: absolute; left: 0; bottom: 0; font-size: .7rem; color: #c9b99c; font-weight: 400; }

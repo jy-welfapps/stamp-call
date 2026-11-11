@@ -31,6 +31,13 @@ export default function Child({ settings, onExit }) {
     return () => clearTimeout(t)
   }, [coolUntil])
 
+  // 「おくったよ」は5秒で消す（見えなくなるだけで、「せんせいが みたよ」は待ち続ける）
+  useEffect(() => {
+    if (last?.status !== 'sent') return
+    const t = setTimeout(() => setLast((l) => (l && l.status === 'sent' ? { ...l, status: 'waiting' } : l)), 5000)
+    return () => clearTimeout(t)
+  }, [last?.status, last?.key])
+
   // 「せんせいが みたよ」は 15秒で消す
   useEffect(() => {
     if (last?.status !== 'seen') return
@@ -92,6 +99,7 @@ export default function Child({ settings, onExit }) {
         {last?.status === 'sent' && <span>{last.stamp.emoji} おくったよ</span>}
         {last?.status === 'seen' && <span className="seen">👀 せんせいが みたよ</span>}
         {last?.status === 'failed' && <span className="warn">おくれなかった。もういちど おしてね</span>}
+        <span className="version">v{__APP_VERSION__}</span>
       </footer>
 
       {glow && <div className="glow" style={{ '--glow': glow }} />}

@@ -1,16 +1,19 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
+import pkg from './package.json' with { type: 'json' }
 
 // GitHub Pages では https://<user>.github.io/<repo>/ で配信されるので base をリポジトリ名に合わせる
 const base = process.env.BASE_PATH || '/stamp-call/'
 
 export default defineConfig({
   base,
+  define: { __APP_VERSION__: JSON.stringify(pkg.version) },
   plugins: [
     react(),
     VitePWA({
       registerType: 'autoUpdate',
+      injectRegister: false,
       includeAssets: ['icon.svg', 'apple-touch-icon.png', 'stamps/*.svg'],
       manifest: {
         name: 'スタンプでつたえる',
