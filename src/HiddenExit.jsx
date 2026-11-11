@@ -9,13 +9,18 @@ export default function HiddenExit({ onExit, room, visible = false }) {
   const [holding, setHolding] = useState(false)
   const [answer, setAnswer] = useState('')
 
+  const lastTouch = useRef(0)
   const startHold = (e) => {
-    e.preventDefault()
+    if (e.type === 'touchstart') lastTouch.current = Date.now()
+    else if (Date.now() - lastTouch.current < 1500) return // タッチの後に来るマウスの動きは無視
     clearTimeout(timer.current)
     setHolding(true)
     timer.current = setTimeout(() => { setHolding(false); setOpen(true) }, 2000)
   }
-  const endHold = () => { clearTimeout(timer.current); setHolding(false) }
+  const endHold = (e) => {
+    if (e && e.type.startsWith('mouse') && Date.now() - lastTouch.current < 1500) return
+    clearTimeout(timer.current); setHolding(false)
+  }
   useEffect(() => () => clearTimeout(timer.current), [])
 
   const close = () => { setOpen(false); setAnswer('') }
@@ -27,15 +32,15 @@ export default function HiddenExit({ onExit, room, visible = false }) {
       ) : (
         <div
           className={'hidden-exit' + (holding ? ' holding' : '')}
-          onTouchStart={startHold} onTouchEnd={endHold} onTouchCancel={endHold}
+          onTouchStart={startHold} onTouchEnd={endHold}
           onMouseDown={startHold} onMouseUp={endHold} onMouseLeave={endHold}
           onContextMenu={(e) => e.preventDefault()}
           aria-label="設定（長押し）"
         >⚙</div>
       )}
       {open && (
-        <div className="modal-back" onClick={close}>
-          <div className="modal" onClick={(e) => e.stopPropagation()}>
+        <div className="modal-back">
+          <div className="modal">
             <h3>設定</h3>
             <p className="muted small">部屋コード</p>
             <p className="room-show">{room}</p>
