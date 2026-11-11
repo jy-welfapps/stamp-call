@@ -1,0 +1,42 @@
+{
+  "_説明": "スタンプの種類と文言はここで変える。emoji の代わりに image に 'stamps/〇〇.svg' を書くと自作の絵になる。sets は子ども（端末）ごとに選べるスタンプのセット。",
+  "sets": [
+    {
+      "id": "one",
+      "name": "1こ（おわった だけ）",
+      "columns": 1,
+      "stamps": ["owatta"]
+    },
+    {
+      "id": "two",
+      "name": "2こ（おわった・たすけて）",
+      "columns": 2,
+      "stamps": ["owatta", "tasukete"]
+    },
+    {
+      "id": "six",
+      "name": "6こ",
+      "columns": 3,
+      "stamps": ["owatta", "tasukete", "toire", "iyada", "ureshii", "yasumitai"]
+    }
+  ],
+  "stamps": {
+    "owatta":    { "label": "おわった",   "emoji": "✅", "color": "#d3f9d8" },
+    "tasukete":  { "label": "たすけて",   "emoji": "🆘", "color": "#ffe3e3" },
+    "toire":     { "label": "トイレ",     "emoji": "🚻", "color": "#d0ebff" },
+    "iyada":     { "label": "いやだ",     "emoji": "🙅", "color": "#fff3bf" },
+    "ureshii":   { "label": "うれしい",   "emoji": "😊", "color": "#ffdeeb" },
+    "yasumitai": { "label": "やすみたい", "emoji": "😴", "color": "#e5dbff" }
+  },
+  "devices": [
+    { "id": "inu-ao",      "icon": "🐶", "name": "いぬ",   "color": "#4dabf7", "colorName": "あお" },
+    { "id": "neko-aka",    "icon": "🐱", "name": "ねこ",   "color": "#ff6b6b", "colorName": "あか" },
+    { "id": "usagi-midori","icon": "🐰", "name": "うさぎ", "color": "#51cf66", "colorName": "みどり" },
+    { "id": "kuma-kiiro",  "icon": "🐻", "name": "くま",   "color": "#fcc419", "colorName": "きいろ" },
+    { "id": "kaeru-murasaki","icon": "🐸", "name": "かえる", "color": "#9775fa", "colorName": "むらさき" },
+    { "id": "pengin-orange","icon": "🐧", "name": "ペンギン","color": "#ff922b", "colorName": "オレンジ" }
+  ],
+  "cooldownSeconds": 3,
+  "keepHours": 24,
+  "staffRepeatSeconds": 30
+}
