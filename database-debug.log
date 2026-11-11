@@ -3,3 +3,7 @@ Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cace
 03:51:48.149 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
 03:51:54.274 [NamespaceSystem-akka.actor.default-dispatcher-6] INFO com.firebase.core.namespace.NamespaceActor - demo-stamp-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 99ms, init: 0ms
 03:51:54.380 [NamespaceSystem-blocking-namespace-operation-dispatcher-7] INFO com.firebase.core.namespace.StateManager - Namespace demo-stamp-default-rtdb status Active to Active
+04:01:39.151 [Thread-0] INFO com.firebase.server.forge.App$ - Attempting graceful shutdown.
+04:01:39.162 [NamespaceSystem-akka.actor.default-dispatcher-18] INFO com.firebase.core.namespace.Terminator$Terminator - 1 actors left to terminate: demo-stamp-default-rtdb
+04:01:39.167 [NamespaceSystem-akka.actor.default-dispatcher-18] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for demo-stamp-default-rtdb
+04:01:39.171 [Thread-0] INFO com.firebase.server.forge.App$ - Graceful shutdown complete.
