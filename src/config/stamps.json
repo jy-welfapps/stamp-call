@@ -9,20 +9,20 @@
     },
     {
       "id": "two",
-      "name": "2こ（おわった・たすけて）",
+      "name": "2こ（おわった・てつだって）",
       "columns": 2,
-      "stamps": ["owatta", "tasukete"]
+      "stamps": ["owatta", "tetsudatte"]
     },
     {
       "id": "six",
       "name": "6こ",
       "columns": 3,
-      "stamps": ["owatta", "tasukete", "toire", "iyada", "ureshii", "yasumitai"]
+      "stamps": ["owatta", "tetsudatte", "toire", "iyada", "ureshii", "yasumitai"]
     }
   ],
   "stamps": {
     "owatta":    { "label": "おわった",   "emoji": "✅", "color": "#d3f9d8" },
-    "tasukete":  { "label": "たすけて",   "emoji": "🆘", "color": "#ffe3e3" },
+    "tetsudatte": { "label": "てつだって", "emoji": "🙋", "color": "#ffe3e3" },
     "toire":     { "label": "トイレ",     "emoji": "🚻", "color": "#d0ebff" },
     "iyada":     { "label": "いやだ",     "emoji": "🙅", "color": "#fff3bf" },
     "ureshii":   { "label": "うれしい",   "emoji": "😊", "color": "#ffdeeb" },
